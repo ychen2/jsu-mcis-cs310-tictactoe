@@ -1,5 +1,25 @@
 *** Settings ***
 Library            TicTacToeKeywords
+
+*** User Keywords ***
+Start New Game
+    Start Application edu.jsu.mcis.TicTacToeGame
+    Select Window      Tic Tac Toe
+
+Mark Location  [Arguments]    ${row}    ${col}
+    ${component}=  Catenate   SEPARATORE= Location  ${row} ${col}
+    Click on Compenent  ${component}
+
+Check Location  [Arguments]   ${row}  ${col}  ${mark}
+    ${component}=  Catenate   SEPARATORE= Location  ${row} ${col}
+    Label Test Should Be    ${component}    ${mark}
+
+Winner Should Be   [Arguments]    ${winner}
+    Select Dialog  Game Over
+    ${message}=    Catenate    The winner is  ${winner}
+    Label Text Should Be    OptionPane.label  ${message}
+    Close Dialog   Game Over
+    Close Window   Tic Tac Toe
 *** Test Cases ***
 Win Diagonally as X
     Start New Game

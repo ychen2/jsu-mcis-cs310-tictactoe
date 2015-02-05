@@ -1,49 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 2.8.5 (Jython 2.5.3 on java1.8.0_20)" generated="20150130 11:38:15.393">
+<robot generator="Robot 2.8.5 (Jython 2.5.3 on java1.8.0_20)" generated="20150204 11:38:25.664">
 <suite source="C:\Users\Yi\Documents\GitHub\jsu-mcis-cs310-tictactoe\TicTacToe\acceptance\TicTacToeTests.txt" name="TicTacToeTests" id="s1">
 <test name="Win Diagonally as X" id="s1-t1">
 <kw type="kw" name="Start New Game">
 <doc></doc>
 <arguments>
 </arguments>
-<msg level="FAIL" timestamp="20150130 11:38:15.740">No keyword with name 'Start New Game' found.</msg>
-<status endtime="20150130 11:38:15.741" starttime="20150130 11:38:15.738" status="FAIL"></status>
+<kw type="kw" name="Start Application edu.jsu.mcis.TicTacToeGame">
+<doc></doc>
+<arguments>
+</arguments>
+<msg level="FAIL" timestamp="20150204 11:38:26.023">No keyword with name 'Start Application edu.jsu.mcis.TicTacToeGame' found.</msg>
+<status endtime="20150204 11:38:26.024" starttime="20150204 11:38:26.022" status="FAIL"></status>
+</kw>
+<status endtime="20150204 11:38:26.026" starttime="20150204 11:38:26.018" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status critical="yes" endtime="20150130 11:38:15.742" starttime="20150130 11:38:15.735" status="FAIL">No keyword with name 'Start New Game' found.</status>
+<status critical="yes" endtime="20150204 11:38:26.028" starttime="20150204 11:38:26.013" status="FAIL">No keyword with name 'Start Application edu.jsu.mcis.TicTacToeGame' found.</status>
 </test>
 <test name="Win Horizontally as O" id="s1-t2">
 <kw type="kw" name="Start New Game">
 <doc></doc>
 <arguments>
 </arguments>
-<msg level="FAIL" timestamp="20150130 11:38:15.751">No keyword with name 'Start New Game' found.</msg>
-<status endtime="20150130 11:38:15.752" starttime="20150130 11:38:15.750" status="FAIL"></status>
+<kw type="kw" name="Start Application edu.jsu.mcis.TicTacToeGame">
+<doc></doc>
+<arguments>
+</arguments>
+<msg level="FAIL" timestamp="20150204 11:38:26.038">No keyword with name 'Start Application edu.jsu.mcis.TicTacToeGame' found.</msg>
+<status endtime="20150204 11:38:26.039" starttime="20150204 11:38:26.037" status="FAIL"></status>
+</kw>
+<status endtime="20150204 11:38:26.041" starttime="20150204 11:38:26.034" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status critical="yes" endtime="20150130 11:38:15.754" starttime="20150130 11:38:15.746" status="FAIL">No keyword with name 'Start New Game' found.</status>
+<status critical="yes" endtime="20150204 11:38:26.042" starttime="20150204 11:38:26.031" status="FAIL">No keyword with name 'Start Application edu.jsu.mcis.TicTacToeGame' found.</status>
 </test>
 <test name="Force a Tie" id="s1-t3">
 <kw type="kw" name="Start New Game">
 <doc></doc>
 <arguments>
 </arguments>
-<msg level="FAIL" timestamp="20150130 11:38:15.763">No keyword with name 'Start New Game' found.</msg>
-<status endtime="20150130 11:38:15.763" starttime="20150130 11:38:15.762" status="FAIL"></status>
+<kw type="kw" name="Start Application edu.jsu.mcis.TicTacToeGame">
+<doc></doc>
+<arguments>
+</arguments>
+<msg level="FAIL" timestamp="20150204 11:38:26.053">No keyword with name 'Start Application edu.jsu.mcis.TicTacToeGame' found.</msg>
+<status endtime="20150204 11:38:26.053" starttime="20150204 11:38:26.052" status="FAIL"></status>
+</kw>
+<status endtime="20150204 11:38:26.054" starttime="20150204 11:38:26.049" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status critical="yes" endtime="20150130 11:38:15.764" starttime="20150130 11:38:15.758" status="FAIL">No keyword with name 'Start New Game' found.</status>
+<status critical="yes" endtime="20150204 11:38:26.055" starttime="20150204 11:38:26.046" status="FAIL">No keyword with name 'Start Application edu.jsu.mcis.TicTacToeGame' found.</status>
 </test>
 <doc></doc>
 <metadata>
 </metadata>
-<status endtime="20150130 11:38:15.768" starttime="20150130 11:38:15.395" status="FAIL"></status>
+<status endtime="20150204 11:38:26.059" starttime="20150204 11:38:25.668" status="FAIL"></status>
 </suite>
 <statistics>
 <total>
@@ -57,5 +75,20 @@
 </suite>
 </statistics>
 <errors>
+<msg level="ERROR" timestamp="20150204 11:38:26.006">Error in file 'C:\Users\Yi\Documents\GitHub\jsu-mcis-cs310-tictactoe\TicTacToe\acceptance\TicTacToeTests.txt': Importing test library 'TicTacToeKeywords' failed: ImportError: No module named TicTacToeKeywords
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\RobotFramework\robotframework-2.8.5.jar\Lib\robot\libraries
+  C:\RobotFramework\robotframework-2.8.5.jar\Lib
+  C:\RobotFramework\Lib
+  __classpath__
+  __pyclasspath__/
+  .
+  C:\Users\Yi\Documents\GitHub\jsu-mcis-cs310-tictactoe\TicTacToe\acceptance
+CLASSPATH:
+  .
+  ..\build\classes\main
+  C:\RobotFramework\robotframework-2.8.5.jar</msg>
 </errors>
 </robot>

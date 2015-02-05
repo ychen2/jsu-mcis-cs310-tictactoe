@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>TicTacToe.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TicTacToe</a> &gt; <a href="index.source.html" class="el_package">edu.jsu.mcis</a> &gt; <span class="el_source">TicTacToe.java</span></div><h1>TicTacToe.java</h1><pre class="source lang-java linenums">package edu.jsu.mcis;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+
+public class TicTacToe{
+<span class="pc" id="L9">	public enum Mark{ X, O, EMPTY};</span>
+	public static Mark Turn;
+	public static Mark[][] board;
+<span class="fc" id="L12">	public static int row = 3;</span>
+<span class="fc" id="L13">	public static int col = 3;</span>
+<span class="pc" id="L14">	public enum state{ TIE, X_WIN, O_WIN, PLAYING}</span>
+	public static state currentState;
+	public int sign;
+<span class="fc" id="L17">	public static Scanner in = new Scanner(System.in);</span>
+<span class="fc" id="L18">	public TicTacToe(){</span>
+<span class="fc" id="L19">		board = new Mark[row][col];</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">		for(int i = 0; i &lt; row; i++)</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">			for(int j = 0; j &lt; col; j++){</span>
+<span class="fc" id="L22">				board[i][j] = Mark.EMPTY;</span>
+			}
+<span class="fc" id="L24">		currentState = state.PLAYING;</span>
+<span class="fc" id="L25">		Turn = Mark.EMPTY;</span>
+<span class="fc" id="L26">	}</span>
+	public void getInput(int r, int c){
+<span class="pc bpc" id="L28" title="4 of 10 branches missed.">			if(r &gt;= 0 &amp;&amp; r &lt; 3 &amp;&amp; c &gt;= 0 &amp;&amp; c &lt; 3 &amp;&amp; board[r][c] == Mark.EMPTY)</span>
+			{
+<span class="fc" id="L30">				getMark(r,c);</span>
+<span class="fc bfc" id="L31" title="All 4 branches covered.">				if(Turn == Mark.EMPTY || Turn == Mark.O){</span>
+<span class="fc" id="L32">					Turn = Mark.X;</span>
+				}
+				else{
+<span class="fc" id="L35">					Turn = Mark.O;</span>
+				}
+			}
+			else {
+<span class="fc" id="L39">				getErrorInput();</span>
+			}
+<span class="fc" id="L41">	}</span>
+	public String getErrorInput(){
+<span class="fc" id="L43">		return &quot;Wrong position to mark. Please enter again!&quot;;</span>
+	}
+	public Mark getMark(int r, int c){
+		do{
+<span class="fc bfc" id="L47" title="All 2 branches covered.">		if (Turn == Mark.EMPTY){</span>
+<span class="fc" id="L48">			board[r][c] = Mark.EMPTY;</span>
+		}
+<span class="fc bfc" id="L50" title="All 2 branches covered.">		else if(Turn == Mark.X){</span>
+<span class="fc" id="L51">			board[r][c] = Mark.X;</span>
+		}
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">		else if(Turn == Mark.O){</span>
+<span class="fc" id="L54">			board[r][c] = Mark.O;</span>
+		}	
+<span class="fc" id="L56">		updateGame(Turn,r,c);</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">		}while(currentState == state.PLAYING);</span>
+<span class="fc" id="L58">		return board[r][c];</span>
+	}
+	public static void updateGame(Mark t, int r, int c){
+<span class="fc bfc" id="L61" title="All 2 branches covered.">		if(hasWon(t, r, c)){</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">			currentState = (t == Mark.X)? state.X_WIN : state.O_WIN;</span>
+		}
+<span class="fc bfc" id="L64" title="All 2 branches covered.">		else if(isTie()){</span>
+<span class="fc" id="L65">			currentState = state.TIE;</span>
+		}
+<span class="fc" id="L67">	}</span>
+	public static boolean isTie(){
+<span class="fc bfc" id="L69" title="All 2 branches covered.">		for(int i = 0; i &lt; 3; i++ ){</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">			for(int j = 0; j &lt; 3; j++){</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">				if(board[i][j] == Mark.EMPTY){</span>
+<span class="fc" id="L72">					return false;</span>
+				}
+			}
+		}
+<span class="fc" id="L76">		return true;</span>
+	}
+	public static boolean hasWon(Mark t, int r, int c){
+<span class="fc bfc" id="L79" title="All 28 branches covered.">		return (board[r][0] == t </span>
+			&amp;&amp; board[r][1] == t 
+			&amp;&amp; board[r][2] == t
+		|| board[0][c] == t 
+			&amp;&amp; board[1][c] == t 
+			&amp;&amp; board[2][c] == t
+		|| r == c 
+			&amp;&amp; board[0][0] == t 
+			&amp;&amp; board[1][1] == t 
+			&amp;&amp; board[2][2] == t
+		|| r + c == 2 
+			&amp;&amp; board[0][2] == t 
+			&amp;&amp; board[1][1] == t 
+			&amp;&amp; board[2][0] == t);
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

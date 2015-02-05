@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.jsu.mcis.TicTacToeTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2015-01-30T17:32:21" hostname="cylaiye" time="0.012">
+<testsuite name="edu.jsu.mcis.TicTacToeTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2015-02-04T17:38:18" hostname="cylaiye" time="0.011">
   <properties/>
-  <testcase name="testInitialBoardIsCompletelyEmpty" classname="edu.jsu.mcis.TicTacToeTest" time="0.009"/>
+  <testcase name="testInitialBoardIsCompletelyEmpty" classname="edu.jsu.mcis.TicTacToeTest" time="0.008"/>
   <testcase name="testMarkXInUpperRightCornerThenOInBottomCenter" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testInputAErrorPosition" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
-  <testcase name="testTheGameIsO" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
+  <testcase name="testTheGameIsO" classname="edu.jsu.mcis.TicTacToeTest" time="0.001"/>
   <testcase name="testTheGameIsX" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testMarkXInUpperRightCorner" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testPositionHasBeenTaken" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
